@@ -15,7 +15,7 @@ public class charreplacecount {
     }
 
     public static String charreplace(String str) {
-
+ 
         StringBuffer sb = new StringBuffer();
         int count = 1;
         char prev = str.charAt(0);
@@ -30,7 +30,7 @@ public class charreplacecount {
                 count = 1;
             }
         }
-        sb.append(prev); // * these both sb are for last append
+        sb.append(prev); // * these both sb are for last append 
         sb.append(count);
         if (str.length() < sb.length()) {
             return str;
