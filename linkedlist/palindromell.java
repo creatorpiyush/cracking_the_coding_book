@@ -16,29 +16,29 @@ public class palindromell {
         for (int i = 0; i < n; i++) {
             int val = s.nextInt();
             ll.add(val);
-
         }
 
-        boolean flag = false;
-        for (int i = 0; i <= n / 2; i++) {
-
-            if (ll.get(i) == ll.get(n - i - 1)) {
-                flag = true;
-            } else {
-                flag = false;
-                break;
-            }
-
-        }
-
-        System.out.println(flag);
-
-        if (flag) {
+        // * isPalindrome check
+        if (isPalindrome(ll)) {
             System.out.println("Palindrome");
         } else {
             System.out.println("Not Palindrome");
         }
 
+    }
+
+    public static boolean isPalindrome(LinkedList<Integer> ll) {
+
+        boolean flag = false;
+        for (int i = 0; i <= ll.size() / 2; i++) {
+            if (ll.get(i) == ll.get(ll.size() - i - 1)) {
+                flag = true;
+            } else {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
     }
 
 }
