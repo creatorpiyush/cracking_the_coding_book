@@ -92,4 +92,11 @@ public class circularlinkedlist {
         return this.head.data;
     }
 
+    public int getLast() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("List is empty");
+        }
+        return this.tail.data;
+    }
+
 }
