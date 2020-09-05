@@ -103,4 +103,19 @@ public class circularlinkedlist {
         return temp.data;
     }
 
+    public int removeFirst() throws Exception {
+        if (this.isEmpty()) {
+            throw new Exception("List is empty");
+        }
+        Node rv = this.head;
+        if (this.size() == 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = this.head.next;
+        }
+        this.size--;
+        return rv.data;
+    }
+
 }

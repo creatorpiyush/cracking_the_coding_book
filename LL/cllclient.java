@@ -16,6 +16,11 @@ public class cllclient {
         System.out.println(cll.getAt(1));
         System.out.println(cll.getAt(2));
 
+        System.out.println(cll.removeFirst());
+        System.out.println(cll.getFirst());
+
+        
+
     }
 
 }
