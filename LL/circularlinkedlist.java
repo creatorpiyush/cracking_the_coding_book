@@ -99,8 +99,7 @@ public class circularlinkedlist {
     }
 
     public int getAt(int index) throws Exception {
-        Node temp = this.getNodeAt(index);
-        return temp.data;
+        return this.getNodeAt(index).data;
     }
 
     public int removeFirst() throws Exception {
