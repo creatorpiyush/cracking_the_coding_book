@@ -19,7 +19,10 @@ public class cllclient {
         System.out.println(cll.removeFirst());
         System.out.println(cll.getFirst());
 
-        
+        System.out.println(cll.removeLast());
+        System.out.println(cll.getLast());
+
+
 
     }
 

@@ -117,4 +117,20 @@ public class circularlinkedlist {
         return rv.data;
     }
 
+    public int removeLast() throws Exception {
+        if (this.isEmpty()) {
+            throw new Exception("List is empty");
+        }
+        Node rv = this.tail;
+        if (this.size() == 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            Node temp = this.getNodeAt(this.size - 2);
+            temp.next = null;
+            this.tail = temp;
+        }
+        return rv.data;
+    }
+
 }
