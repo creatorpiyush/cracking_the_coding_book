@@ -151,4 +151,13 @@ public class circularlinkedlist {
         }
     }
 
+    public void display() {
+        Node temp = this.head;
+        do {
+            System.out.print(temp.data + "=>");
+            temp = temp.next;
+        } while (temp != this.head);
+        System.out.println("end");
+    }
+
 }
