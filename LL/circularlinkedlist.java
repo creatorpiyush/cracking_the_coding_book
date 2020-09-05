@@ -130,7 +130,25 @@ public class circularlinkedlist {
             temp.next = null;
             this.tail = temp;
         }
+        this.size--;
         return rv.data;
+    }
+
+    public int removeAt(int index) throws Exception {
+        if (this.isEmpty()) {
+            throw new Exception("List is empty");
+        }
+        if (index == 0) {
+            return this.removeFirst();
+        } else if (index == this.size - 1) {
+            return this.removeLast();
+        } else {
+            Node temp = this.getNodeAt(index - 1);
+            Node rv = temp.next;
+            temp.next = temp.next.next;
+            this.size--;
+            return rv.data;
+        }
     }
 
 }

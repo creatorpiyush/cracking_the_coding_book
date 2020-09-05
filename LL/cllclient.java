@@ -22,7 +22,8 @@ public class cllclient {
         System.out.println(cll.removeLast());
         System.out.println(cll.getLast());
 
-
+        System.out.println(cll.removeAt(0));
+        System.out.println(cll.getAt(0));
 
     }
 
