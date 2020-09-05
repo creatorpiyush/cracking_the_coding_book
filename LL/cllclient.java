@@ -8,8 +8,13 @@ public class cllclient {
 
         cll.addFirst(10);
         cll.addLast(20);
+        cll.addLast(30);
+        cll.addLast(40);
+
         System.out.println(cll.getFirst());
         System.out.println(cll.getLast());
+        System.out.println(cll.getAt(1));
+        System.out.println(cll.getAt(2));
 
     }
 

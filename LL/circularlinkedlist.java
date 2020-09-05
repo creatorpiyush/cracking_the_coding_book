@@ -5,7 +5,6 @@ public class circularlinkedlist {
     private class Node {
         int data;
         Node next;
-        Node prev;
 
         Node(int data, Node next) {
 
@@ -97,6 +96,11 @@ public class circularlinkedlist {
             throw new Exception("List is empty");
         }
         return this.tail.data;
+    }
+
+    public int getAt(int index) throws Exception {
+        Node temp = this.getNodeAt(index);
+        return temp.data;
     }
 
 }
