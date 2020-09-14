@@ -15,24 +15,39 @@ public class findduplicate {
             arr[i] = s.nextInt();
         }
 
-        // int value = s.nextInt();
+        // System.out.println(isDuplicate(arr));
 
-        System.out.println(isDuplicate(arr));
+        int[] arrreplaced = replacewith0(arr);
+        for (int arrreplace : arrreplaced) {
+            System.out.print(arrreplace + " ");
+        }
 
     }
 
-    public static boolean isDuplicate(int[] arr) {
+    // public static boolean isDuplicate(int[] arr) {
+
+    // for (int i = 0; i < arr.length; i++) {
+    // for (int j = i + 1; j < arr.length - i; j++) {
+    // if (arr[i] == arr[j]) {
+    // return true;
+    // }
+    // }
+    // }
+
+    // return false;
+
+    // }
+
+    public static int[] replacewith0(int[] arr) {
 
         for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length - i; j++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] == arr[j]) {
-                    return true;
+                    arr[j] = 0;
                 }
             }
         }
-
-        return false;
-
+        return arr;
     }
 
 }
