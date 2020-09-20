@@ -7,6 +7,7 @@ public class clientbinarytree {
         binarytree bt = new binarytree();
 
         bt.display();
+        System.out.println(bt.size());
 
     }
 
