@@ -185,4 +185,18 @@ public class binarytree {
         this.inorder(node.right);
     }
 
+    public void postorder() {
+        this.postorder(this.root);
+    }
+
+    private void postorder(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        this.postorder(node.left);
+        this.postorder(node.right);
+        System.out.print(node.data + " ");
+    }
+
 }
