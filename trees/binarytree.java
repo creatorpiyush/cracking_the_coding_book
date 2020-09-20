@@ -171,4 +171,18 @@ public class binarytree {
 
     }
 
+    public void inorder() {
+        this.inorder(this.root);
+    }
+
+    private void inorder(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        this.inorder(node.left);
+        System.out.print(node.data + " ");
+        this.inorder(node.right);
+    }
+
 }
