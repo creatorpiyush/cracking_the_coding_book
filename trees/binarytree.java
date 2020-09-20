@@ -90,4 +90,71 @@ public class binarytree {
         return mysize;
     }
 
+    public int max() {
+        return this.max(this.root);
+    }
+
+    private int max(Node node) {
+        if (node == null) {
+            return Integer.MIN_VALUE;
+        }
+
+        int lmax = this.max(node.left);
+        int rmax = this.max(node.right);
+        int mymax = Math.max(node.data, Math.max(lmax, rmax));
+
+        return mymax;
+    }
+
+    public int min() {
+        return this.min(this.root);
+    }
+
+    private int min(Node node) {
+        if (node == null) {
+            return Integer.MAX_VALUE;
+        }
+
+        int lmin = this.min(node.left);
+        int rmin = this.min(node.right);
+        int mymin = Math.min(node.data, Math.min(lmin, rmin));
+
+        return mymin;
+    }
+
+    public int height() {
+        return this.height(this.root);
+    }
+
+    private int height(Node node) {
+        if (node == null) {
+            return -1;
+        }
+
+        int lheight = this.height(node.left);
+        int rheight = this.height(node.right);
+        int myheight = Math.max(lheight, rheight) + 1;
+
+        return myheight;
+    }
+
+    public boolean find(int data) {
+        return this.find(this.root, data);
+    }
+
+    private boolean find(Node node, int data) {
+        if (node == null) {
+            return false;
+        }
+        if (node.data == data) {
+            return true;
+        } else if (this.find(node.left, data)) {
+            return true;
+        } else if (this.find(node.right, data)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
