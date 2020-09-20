@@ -18,6 +18,7 @@ public class clientbinarytree {
 
         System.out.println(bt.find(50));
 
+        bt.preorder();
     }
 
 }

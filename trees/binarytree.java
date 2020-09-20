@@ -157,4 +157,18 @@ public class binarytree {
         }
     }
 
+    public void preorder() {
+        this.preorder(this.root);
+    }
+
+    private void preorder(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.data + " ");
+        this.preorder(node.left);
+        this.preorder(node.right);
+
+    }
+
 }
