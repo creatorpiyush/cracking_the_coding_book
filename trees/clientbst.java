@@ -19,6 +19,9 @@ public class clientbst {
 
         System.out.println(bst.min());
 
+        bst.remove(5);
+        bst.display();
+
         bst.roottoleaf();
     }
 
