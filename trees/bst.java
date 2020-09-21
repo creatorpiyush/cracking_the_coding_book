@@ -67,6 +67,19 @@ public class bst {
         if (node.right != null) {
             this.display(node.right);
         }
+
+    }
+
+    public int max() {
+        return this.max(this.root);
+    }
+
+    private int max(Node node) {
+        int max = node.data;
+        if (node.right != null) {
+            max = this.max(node.right);
+        }
+        return max;
     }
 
 }

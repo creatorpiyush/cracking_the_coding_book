@@ -14,6 +14,8 @@ public class clientbst {
         bst.add(20);
 
         bst.display();
+
+        System.out.println(bst.max());
     }
 
 }
