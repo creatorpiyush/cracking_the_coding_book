@@ -36,7 +36,7 @@ public class bst {
             }
         } else if (data > node.data) {
             if (node.right != null) {
-                this.add(node, data);
+                this.add(node.right, data);
             } else {
                 node.right = new Node(data, null, null);
                 this.size++;

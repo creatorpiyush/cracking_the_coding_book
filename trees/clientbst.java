@@ -9,6 +9,9 @@ public class clientbst {
         bst.add(10);
         bst.add(5);
         bst.add(15);
+        bst.add(7);
+        bst.add(12);
+        bst.add(20);
 
         bst.display();
     }
