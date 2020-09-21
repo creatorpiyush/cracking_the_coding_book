@@ -215,4 +215,21 @@ public class binarytree {
         }
     }
 
+    public void roottoleaf() {
+        this.roottoleaf(this.root, "");
+    }
+
+    private void roottoleaf(Node node, String osf) {
+        if (node == null) {
+            return;
+        }
+        osf = osf + node.data + ", ";
+        if (node.left == null && node.right == null) {
+            System.out.println(osf + "End");
+            return;
+        }
+        this.roottoleaf(node.left, osf);
+        this.roottoleaf(node.right, osf);
+    }
+
 }
