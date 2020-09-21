@@ -44,4 +44,29 @@ public class bst {
         }
     }
 
+    public void display() {
+        this.display(this.root);
+    }
+
+    private void display(Node node) {
+        if (node.left != null) {
+            System.out.print(node.left.data + " => ");
+        } else {
+            System.out.print("End => ");
+        }
+        System.out.print(node.data);
+        if (node.right != null) {
+            System.out.print(" => " + node.right.data);
+        } else {
+            System.out.print(" <= End");
+        }
+        System.out.println();
+        if (node.left != null) {
+            this.display(node.left);
+        }
+        if (node.right != null) {
+            this.display(node.right);
+        }
+    }
+
 }
