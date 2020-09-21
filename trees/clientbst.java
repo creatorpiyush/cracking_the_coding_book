@@ -18,6 +18,8 @@ public class clientbst {
         System.out.println(bst.max());
 
         System.out.println(bst.min());
+
+        bst.roottoleaf();
     }
 
 }
