@@ -1,5 +1,6 @@
 package trees;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class binarytree {
@@ -197,6 +198,21 @@ public class binarytree {
         this.postorder(node.left);
         this.postorder(node.right);
         System.out.print(node.data + " ");
+    }
+
+    public void levelorder() {
+        LinkedList<Node> queue = new LinkedList<>();
+        queue.add(this.root);
+        while (!queue.isEmpty()) {
+            Node rv = queue.remove();
+            System.out.print(rv.data + " ");
+            if (rv.left != null) {
+                queue.add(rv.left);
+            }
+            if (rv.right != null) {
+                queue.add(rv.right);
+            }
+        }
     }
 
 }

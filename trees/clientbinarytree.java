@@ -25,6 +25,9 @@ public class clientbinarytree {
 
         System.out.println();
         bt.postorder();
+
+        System.out.println();
+        bt.levelorder();
     }
 
 }
