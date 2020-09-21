@@ -16,6 +16,8 @@ public class clientbst {
         bst.display();
 
         System.out.println(bst.max());
+
+        System.out.println(bst.min());
     }
 
 }
