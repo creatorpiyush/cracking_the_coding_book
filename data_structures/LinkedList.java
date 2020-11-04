@@ -81,6 +81,28 @@ public class LinkedList {
 
     }
 
+    public int getFirst() throws Exception {
+        if (this.isEmpty()) {
+            throw new Exception("List is Empty");
+        }
+        return this.head.data;
+    }
+
+    public int getLast() throws Exception {
+        if (this.isEmpty()) {
+            throw new Exception("List is Empty");
+        }
+        return this.tail.data;
+    }
+
+    public int getAt(int index) throws Exception {
+        if (this.isEmpty()) {
+            throw new Exception("List is Empty");
+        }
+
+        return this.getNodeAt(index).data;
+    }
+
     public void display() {
         Node temp = this.head;
         while (temp != null) {
