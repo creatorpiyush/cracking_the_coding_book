@@ -103,6 +103,57 @@ public class LinkedList {
         return this.getNodeAt(index).data;
     }
 
+    public int removeFirst() throws Exception {
+        if (this.isEmpty()) {
+            throw new Exception("List is Empty");
+        }
+        Node rv = this.head;
+        if (this.size() == 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = this.head.next;
+        }
+        this.size--;
+        return rv.data;
+    }
+
+    public int removeLast() throws Exception {
+        if (this.isEmpty()) {
+            throw new Exception("List is Empty");
+        }
+        Node rv = this.tail;
+        if (this.size == 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            Node temp = this.getNodeAt(this.size - 2);
+            temp.next = null;
+            this.tail = temp;
+        }
+
+        this.size--;
+        return rv.data;
+    }
+
+    public int removeAt(int index) throws Exception {
+        if (this.isEmpty()) {
+            throw new Exception("List is Empty");
+        }
+
+        if (index == 0) {
+            return this.removeFirst();
+        } else if (index == this.size) {
+            return this.removeLast();
+        } else {
+            Node temp = this.getNodeAt(index - 1);
+            Node rv = temp.next;
+            temp.next = temp.next.next;
+            this.size--;
+            return rv.data;
+        }
+    }
+
     public void display() {
         Node temp = this.head;
         while (temp != null) {
