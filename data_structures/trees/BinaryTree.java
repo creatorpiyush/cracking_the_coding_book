@@ -76,5 +76,71 @@ public class BinaryTree {
         if (node.right != null) {
             this.display(node.right);
         }
+
     }
+
+    public int size() {
+        return this.size(this.root);
+    }
+
+    private int size(Node node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int lsize = this.size(node.left);
+        int rsize = this.size(node.right);
+        return lsize + rsize + 1;
+    }
+
+    public int max() {
+        return this.max(this.root);
+    }
+
+    private int max(Node node) {
+
+        if (node == null) {
+            return Integer.MIN_VALUE;
+        }
+
+        int lmax = this.max(node.left);
+        int rmax = this.max(node.right);
+        return Math.max(node.data, Math.max(lmax, rmax));
+    }
+
+    public int min() {
+        return this.min(this.root);
+    }
+
+    private int min(Node node) {
+
+        if (node == null) {
+            return Integer.MAX_VALUE;
+        }
+
+        int lmin = this.min(node.left);
+        int rmin = this.min(node.right);
+
+        return Math.min(node.data, Math.min(lmin, rmin));
+    }
+
+    public boolean find(int data) {
+        return this.find(this.root, data);
+    }
+
+    private boolean find(Node node, int data) {
+        if (node == null) {
+            return false;
+        }
+        if (node.data == data) {
+            return true;
+        } else if (this.find(node.left, data)) {
+            return true;
+        } else if (this.find(node.right, data)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

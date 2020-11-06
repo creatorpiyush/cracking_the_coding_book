@@ -9,6 +9,15 @@ public class binaryclient {
         System.out.println();
         bt.display();
 
+        System.out.println(bt.size());
+
+        System.out.println(bt.max());
+
+        System.out.println(bt.min());
+
+        System.out.println(bt.find(12));
+        System.out.println(bt.find(10));
+
     }
 
 }
