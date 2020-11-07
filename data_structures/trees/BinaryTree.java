@@ -1,5 +1,6 @@
 package data_structures.trees;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class BinaryTree {
@@ -140,6 +141,76 @@ public class BinaryTree {
             return true;
         } else {
             return false;
+        }
+    }
+
+    public int height() {
+        return this.height(this.root);
+    }
+
+    private int height(Node node) {
+
+        if (node == null) {
+            return -1;
+        }
+
+        int lheight = this.height(node.left);
+        int rheight = this.height(node.right);
+
+        return Math.max(lheight, rheight) + 1;
+    }
+
+    public void preOrder() {
+        this.preOrder(this.root);
+    }
+
+    private void preOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.data + " ");
+        this.preOrder(node.left);
+        this.preOrder(node.right);
+    }
+
+    public void inOrder() {
+        this.inOrder(this.root);
+    }
+
+    private void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        this.inOrder(node.left);
+        System.out.print(node.data + " ");
+        this.inOrder(node.right);
+    }
+
+    public void postOrder() {
+        this.postOrder(this.root);
+    }
+
+    private void postOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        this.postOrder(node.left);
+        this.postOrder(node.right);
+        System.out.print(node.data + " ");
+    }
+
+    public void levelOrder() {
+        LinkedList<Node> queue = new LinkedList<>();
+        queue.add(this.root);
+        while (!queue.isEmpty()) {
+            Node rv = queue.remove();
+            System.out.print(rv.data + " ");
+            if (rv.left != null) {
+                queue.add(rv.left);
+            }
+            if (rv.right != null) {
+                queue.add(rv.right);
+            }
         }
     }
 

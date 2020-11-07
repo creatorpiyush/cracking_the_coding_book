@@ -18,6 +18,19 @@ public class binaryclient {
         System.out.println(bt.find(12));
         System.out.println(bt.find(10));
 
+        System.out.println(bt.height());
+
+        bt.preOrder();
+
+        System.out.println();
+        bt.inOrder();
+
+        System.out.println();
+        bt.postOrder();
+
+        System.out.println();
+        bt.levelOrder();
+
     }
 
 }
